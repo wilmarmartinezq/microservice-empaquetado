@@ -1,10 +1,7 @@
-CREATE TABLE usuarios_legado(  
+CREATE TABLE eda_empaquetado(  
     id int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Llave primaria',
-    nombres VARCHAR(255),
-    apellidos VARCHAR(255),
-    direccion VARCHAR(255),
-    telefono VARCHAR(255),
-    email VARCHAR(255),
-    password VARCHAR(255)
+    producto_id VARCHAR(255),
+    estado VARCHAR(255),
+    fecha VARCHAR(255)
 
-) COMMENT 'Tabla legado de los usuarios';
+) COMMENT 'Tabla estado de los empaquetados';
