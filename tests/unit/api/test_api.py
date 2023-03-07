@@ -4,9 +4,9 @@ import tempfile
 import pytest
 import json
 
-from aeroalpes.api import create_app, importar_modelos_alchemy
-from aeroalpes.config.db import init_db
-from aeroalpes.config.db import db
+from eda.api import create_app, importar_modelos_alchemy
+from eda.config.db import init_db
+from eda.config.db import db
 
 @pytest.fixture
 def app():
@@ -20,7 +20,7 @@ def app():
     with app.app_context():
         init_db(app)
 
-        from aeroalpes.config.db import db
+        from eda.config.db import db
 
         importar_modelos_alchemy()
         db.create_all()
@@ -101,6 +101,6 @@ def reserva_correcta():
     ]
 }
 
-def test_reservar_vuelo(client):
-    rv = client.post('/vuelos/reserva', data=json.dumps(reserva_correcta()), content_type='application/json')
+def test_empaquetado(client):
+    rv = client.post('/empaquetado', data=json.dumps(reserva_correcta()), content_type='application/json')
     assert rv is not None

@@ -8,8 +8,8 @@ from dataclasses import dataclass, field
 import pytest
 from datetime import datetime
 from uuid import UUID
-from aeroalpes.seedwork.dominio.entidades import Entidad
-from aeroalpes.seedwork.dominio.excepciones import IdDebeSerInmutableExcepcion
+from eda.seedwork.dominio.entidades import Entidad
+from eda.seedwork.dominio.excepciones import IdDebeSerInmutableExcepcion
 
 
 """

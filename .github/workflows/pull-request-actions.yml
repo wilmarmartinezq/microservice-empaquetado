@@ -1,4 +1,4 @@
-name: Pull Request AeroAlpes
+name: Pull Request eda
 'on':
   pull_request:
     branches:

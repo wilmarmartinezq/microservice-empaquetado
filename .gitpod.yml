@@ -13,10 +13,10 @@ tasks:
     command: pip install -r requirements.txt && pip install -r sidecar-requirements.txt && pip install -r ui-requirements.txt
   - name: Crear imagenes Docker
     init: > 
-      docker build . -f aeroalpes.Dockerfile -t aeroalpes/flask &&
-      docker build . -f adaptador.Dockerfile -t aeroalpes/adaptador &&
-      docker build . -f notificacion.Dockerfile -t aeroalpes/notificacion &&
-      docker build . -f ui.Dockerfile -t aeroalpes/ui &&
+      docker build . -f eda.Dockerfile -t eda/flask &&
+      docker build . -f adaptador.Dockerfile -t eda/adaptador &&
+      docker build . -f notificacion.Dockerfile -t eda/notificacion &&
+      docker build . -f ui.Dockerfile -t eda/ui &&
       gp sync-done images
   - name: Crear folder para datos, clientes, conectores y asigna permisos
     init: > 

@@ -2,7 +2,7 @@ import asyncio
 import websockets
 import json
 
-from aeroalpes.consumidor import obtener_suscripcion_a_topico
+from eda.consumidor import obtener_suscripcion_a_topico
 
 consumidor = None
 
