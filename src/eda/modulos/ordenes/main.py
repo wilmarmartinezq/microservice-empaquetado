@@ -22,6 +22,7 @@ import pulsar, _pulsar
 import aiopulsar
 import asyncio
 from pulsar.schema import *
+from pydantic import BaseSettings
 
 
 from typing import Any
