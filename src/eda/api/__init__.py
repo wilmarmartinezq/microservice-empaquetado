@@ -8,7 +8,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 def importar_modelos_alchemy():
-    import eda.modulos.empaquetado.infraestructura.dto
+    import eda.modulos.ordenes.infraestructura.dto
 
 def comenzar_consumidor(app):
     """
@@ -18,7 +18,7 @@ def comenzar_consumidor(app):
     """
 
     import threading
-    import eda.modulos.empaquetado.infraestructura.consumidores as empaquetado
+    import eda.modulos.ordenes.infraestructura.consumidores as empaquetado
 
     # Suscripción a eventos
     threading.Thread(target=empaquetado.suscribirse_a_eventos).start()
@@ -53,10 +53,10 @@ def create_app(configuracion={}):
             comenzar_consumidor(app)
 
      # Importa Blueprints
-    from . import empaquetado
+    from . import ordenes
 
     # Registro de Blueprints
-    app.register_blueprint(empaquetado.bp)
+    app.register_blueprint(ordenes.bp)
 
     @app.route("/spec")
     def spec():
