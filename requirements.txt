@@ -25,3 +25,4 @@ tomli==2.0.1
 Werkzeug==2.2.2
 mysql-connector-python==8.0.32
 aiopulsar==0.0
+fastapi==0.94.1
