@@ -5,7 +5,7 @@ CREATE TABLE eda_ordenes(
     cantidad int,
     email VARCHAR(255),
     direccion VARCHAR(255),
-    fecha_creacion VARCHAR(255),
+    fecha_creacion VARCHAR(255)
     
 
 ) COMMENT 'Tabla ordenes';
