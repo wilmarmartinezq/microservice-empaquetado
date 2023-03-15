@@ -109,7 +109,7 @@ services:
       - SYS_NICE
     restart: always
     environment:
-      - MYSQL_DATABASE=empaquetado
+      - MYSQL_DATABASE=ordenes
       - MYSQL_ROOT_PASSWORD=adminadmin
     profiles: ["eda", "db"]
     networks:
