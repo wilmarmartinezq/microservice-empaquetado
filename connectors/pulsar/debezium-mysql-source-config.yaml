@@ -14,7 +14,7 @@ configs:
     database.password: "adminadmin"
     database.server.id: "534523"
     database.server.name: "edadb"
-    database.whitelist: "empaquetado"
+    database.whitelist: "ordenes"
     database.history: "org.apache.pulsar.io.debezium.PulsarDatabaseHistory"
     database.history.pulsar.topic: "history-topic"
     database.history.pulsar.service.url: "pulsar://127.0.0.1:6650"
