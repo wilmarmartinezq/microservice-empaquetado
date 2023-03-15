@@ -26,7 +26,6 @@ from pulsar.schema import *
 
 from typing import Any
 
-from .despachadores import Despachador
 
 
 epoch = datetime.datetime.utcfromtimestamp(0)
