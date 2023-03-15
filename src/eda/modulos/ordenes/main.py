@@ -302,8 +302,8 @@ async def prueba_orden_crear() -> dict[str, str]:
     )
 
     evento = EventoEmpaquetado(
-        time=utils.time_millis(),
-        ingestion=utils.time_millis(),
+        time=time_millis(),
+        ingestion=time_millis(),
         datacontenttype=EmpaquetadoCreada.__name__,
         empaquetado_creada = payload
     )
