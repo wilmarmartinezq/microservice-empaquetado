@@ -7,4 +7,4 @@ CREATE TABLE ordenes (
     direccion VARCHAR(255),
     fecha_creacion VARCHAR(255)
 
-) COMMENT 'Tabla estado de los empaquetados';
+) COMMENT 'Tabla ordenes';
