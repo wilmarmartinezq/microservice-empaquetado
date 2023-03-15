@@ -236,9 +236,9 @@ class Config(BaseSettings):
     APP_VERSION: str = "1"
 
 settings = Config()
-app_configs: dict[str, Any] = {"title": "ordenes"}
 
-app = FastAPI(**app_configs)
+
+app = FastAPI()
 tasks = list()
 
 @app.on_event("startup")
