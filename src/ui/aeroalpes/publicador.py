@@ -1,7 +1,7 @@
 import pulsar
 
 client = pulsar.Client('pulsar://localhost:6650')
-producer = client.create_producer('comandos-empaquetado')
+producer = client.create_producer('comandos-orden')
 
 for i in range(10):
     producer.send(('Hola-Pulsar-%d' % i).encode('utf-8'))

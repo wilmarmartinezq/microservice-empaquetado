@@ -21,7 +21,7 @@ def database_connection(config, basedir=os.path.abspath(os.path.dirname(__file__
     if config.get('TESTING', False) == True:
         return f'sqlite:///{os.path.join(basedir, "database.db")}'
     else:
-        return f'mysql+pymysql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOSTNAME}/empaquetado'
+        return f'mysql+pymysql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOSTNAME}/ordenes'
 
 
 def init_db(app: Flask):
