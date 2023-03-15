@@ -1,5 +1,4 @@
 from pulsar.schema import *
-from fastapi import FastAPI
 import mysql.connector
 import uuid
 # from cliente.config.api import app_configs, settings
@@ -14,7 +13,6 @@ import uuid
 import asyncio
 import time
 import traceback
-import uvicorn
 
 from typing import Any
 
