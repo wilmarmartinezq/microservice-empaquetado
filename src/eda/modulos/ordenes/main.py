@@ -26,7 +26,6 @@ from pulsar.schema import *
 
 from typing import Any
 
-from .consumidores import suscribirse_a_topico
 from .despachadores import Despachador
 
 
