@@ -1,4 +1,4 @@
-CREATE TABLE ordenes(  
+CREATE TABLE eda_ordenes(  
     id int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Llave primaria',
     nombre VARCHAR(255),
     producto VARCHAR(255),
