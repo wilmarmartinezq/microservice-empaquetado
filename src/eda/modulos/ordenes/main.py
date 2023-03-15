@@ -14,11 +14,60 @@ import uuid
 import asyncio
 import time
 import traceback
+import os
+import datetime
+import logging
+import traceback
+import pulsar, _pulsar
+import aiopulsar
+import asyncio
+from pulsar.schema import *
+
 
 from typing import Any
 
 from .consumidores import suscribirse_a_topico
 from .despachadores import Despachador
+
+
+epoch = datetime.datetime.utcfromtimestamp(0)
+
+def time_millis():
+    return int(time.time() * 1000)
+
+def unix_time_millis(dt):
+    return (dt - epoch).total_seconds() * 1000.0
+
+def millis_a_datetime(millis):
+    return datetime.datetime.fromtimestamp(millis/1000.0)
+
+def broker_host():
+    return os.getenv('BROKER_HOST', default="localhost")
+
+
+
+async def suscribirse_a_topico(topico: str, suscripcion: str, schema: Record, tipo_consumidor:_pulsar.ConsumerType=_pulsar.ConsumerType.Shared):
+    try:
+        async with aiopulsar.connect(f'pulsar://{broker_host()}:6650') as cliente:
+            async with cliente.subscribe(
+                topico, 
+                consumer_type=tipo_consumidor,
+                subscription_name=suscripcion, 
+                schema=AvroSchema(schema)
+            ) as consumidor:
+                while True:
+                    mensaje = await consumidor.receive()
+                    print(mensaje)
+                    datos = mensaje.value()
+                    print(f'Evento recibido: {datos}')
+                    await consumidor.acknowledge(mensaje)    
+
+    except:
+        logging.error(f'ERROR: Suscribiendose al tópico! {topico}, {suscripcion}, {schema}')
+        traceback.print_exc()
+
+
+
 
 
 def time_millis():
