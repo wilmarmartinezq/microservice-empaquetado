@@ -232,6 +232,14 @@ class ComandoEmpaquetadoCrear(Record):
         super().__init__(*args, **kwargs)
 
 
+client = pulsar.Client('pulsar://localhost:6650')
+
+producer = client.create_producer('evento-ordenes')
+producer = client.create_producer('evento-aquisiciones')
+producer = client.create_producer('evento-empaquetado')
+producer = client.create_producer('comando-adquisiciones')
+producer = client.create_producer('comando-empaquetado')
+
 class Config(BaseSettings):
     APP_VERSION: str = "1"
 
