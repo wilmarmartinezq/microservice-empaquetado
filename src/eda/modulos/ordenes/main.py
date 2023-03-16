@@ -244,12 +244,12 @@ tasks = list()
 @app.on_event("startup")
 async def app_startup():
     global tasks
-    task1 = asyncio.ensure_future(suscribirse_a_topico("evento-ordenes", "sub-ordenes", EventoOrden))
-    task2 = asyncio.ensure_future(suscribirse_a_topico("evento-aquisiciones", "sub-adquisiciones", EventoAdquisiciones))
-    task3 = asyncio.ensure_future(suscribirse_a_topico("evento-empaquetado", "sub-empaquetado", EventoEmpaquetado))        
-    task4 = asyncio.ensure_future(suscribirse_a_topico("comando-ordenes", "sub-com-ordenes", ComandoOrdenCrear))
-    task5 = asyncio.ensure_future(suscribirse_a_topico("comando-adquisiciones", "sub-com-adquisiciones", ComandoAdquisicionesCrear))
-    task6 = asyncio.ensure_future(suscribirse_a_topico("comando-empaquetado", "sub-com-empaquetado", ComandoEmpaquetadoCrear))
+    task1 = asyncio.ensure_future(suscribirse_a_topico("evento-ordenes", EventoOrden))
+    task2 = asyncio.ensure_future(suscribirse_a_topico("evento-aquisiciones",  EventoAdquisiciones))
+    task3 = asyncio.ensure_future(suscribirse_a_topico("evento-empaquetado", EventoEmpaquetado))        
+    task4 = asyncio.ensure_future(suscribirse_a_topico("comando-ordenes", ComandoOrdenCrear))
+    task5 = asyncio.ensure_future(suscribirse_a_topico("comando-adquisiciones", ComandoAdquisicionesCrear))
+    task6 = asyncio.ensure_future(suscribirse_a_topico("comando-empaquetado", ComandoEmpaquetadoCrear))
 
     tasks.append(task1)
     tasks.append(task2)

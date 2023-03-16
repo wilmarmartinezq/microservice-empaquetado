@@ -28,3 +28,9 @@ configs:
 
     ## OFFSET_STORAGE_TOPIC_CONFIG
     offset.storage.topic: "offset-topic"
+    offset.storage.topic: "evento-ordenes"
+    offset.storage.topic: "evento-aquisicione"
+    offset.storage.topic: "evento-empaquetado"
+    offset.storage.topic: "comando-ordenes"
+    offset.storage.topic: "comando-adquisiciones"
+    offset.storage.topic: "comando-empaquetado"
